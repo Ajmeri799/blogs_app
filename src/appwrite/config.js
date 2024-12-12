@@ -121,6 +121,9 @@ export class Service {
   }
 
   getFilePreview(fileId) {
+    if (!fileId) {
+      throw new Error("fileId is missing or invalid");
+    }
     return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
   }
 }
