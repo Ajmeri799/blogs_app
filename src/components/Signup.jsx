@@ -54,14 +54,14 @@ function Signup() {
         <form onSubmit={handleSubmit(create)} className="mt-5">
           <div className="space-y-5">
             <Input
-              label="Full Name: "
+              label="Full Name "
               placeholder="Enter your full name"
               {...register("name", {
                 required: true,
               })}
             />
             <Input
-              label="Email: "
+              label="Email "
               placeholder="Enter your email"
               type="email"
               {...register("email", {
@@ -74,7 +74,7 @@ function Signup() {
               })}
             />
             <Input
-              label="Password: "
+              label="Password "
               type="password"
               placeholder="Enter your password"
               {...register("password", {
