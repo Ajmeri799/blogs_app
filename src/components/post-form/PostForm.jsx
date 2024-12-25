@@ -89,7 +89,7 @@ export default function PostForm({ post }) {
         <Input
           label="Title :"
           placeholder="Title"
-          className="mb-4"
+          className="mb-4 "
           {...register("title", { required: true })}
         />
         <Input
@@ -136,7 +136,7 @@ export default function PostForm({ post }) {
         <Button
           type="submit"
           bgColor={post ? "bg-green-500" : undefined}
-          className="w-full"
+          className="w-full "
         >
           {post ? "Update" : "Submit"}
         </Button>

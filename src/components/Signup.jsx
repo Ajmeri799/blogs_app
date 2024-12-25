@@ -17,28 +17,27 @@ function Signup() {
     try {
       const userData = await authService.createAccount(data);
       if (userData) {
-        // const userData = await authService.getCurrentUser();
-        // if (userData)
-        //   dispatch(login(userData));
+        const userData = await authService.getCurrentUser();
+        if (userData) dispatch(login(userData));
         // navigate("/");
 
-        navigate("/login");
+        // navigate("/login");
       }
     } catch (error) {
       setError(error.message);
     }
   };
   return (
-    <div className="flex items-center justify-center font-bold bg-teal-950">
+    <div className="flex items-center justify-center font-bold ">
       <div
-        className={`mx-auto w-full max-w-lg bg-amber-700 my-5 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg  my-5 bg-teal-900  rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex justify-center text-black">
           <span className="inline-block w-full max-w-[100px]">
             <Logo width="100%" />
           </span>
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight text-black">
+        <h2 className="text-center text-2xl font-bold leading-tight text-neutral-950">
           Sign up to create an account
         </h2>
         <p className="mt-2 text-center text-base text-black/60">
@@ -52,7 +51,7 @@ function Signup() {
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(create)}>
+        <form onSubmit={handleSubmit(create)} className="mt-5">
           <div className="space-y-5">
             <Input
               label="Full Name: "
@@ -82,7 +81,7 @@ function Signup() {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full bg-orange-600">
+            <Button type="submit" className="w-full bg-orange-700">
               Create Account
             </Button>
           </div>
